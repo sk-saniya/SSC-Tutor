@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 // Protects /chat: signed-out visitors get bounced to /login.
 // Also keeps the Supabase auth session cookie fresh on every request.
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(
