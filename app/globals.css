@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+
+  --color-ink: #1c2620;
+  --color-paper: #f3f6ef;
+  --color-paper-card: #ffffff;
+  --color-grid: #dbe6d3;
+  --color-chalkboard: #1f3b33;
+  --color-chalkboard-light: #2c5249;
+  --color-chalk: #f2c14e;
+  --color-chalk-ink: #5c4413;
+  --color-beaker: #2c7da0;
+  --color-beaker-ink: #16384a;
+  --color-margin: #b23a3a;
+  --color-muted: #5b6b60;
+
+  --font-display: var(--font-space-mono);
+  --font-body: var(--font-manrope);
+  --font-accent: var(--font-kalam);
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --color-chalkboard: var(--color-chalkboard);
+  --color-chalk: var(--color-chalk);
+  --color-beaker: var(--color-beaker);
+  --color-margin: var(--color-margin);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-accent: var(--font-accent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body), sans-serif;
+}
+
+/* Faint graph-paper grid for light sections — the page's "desk" texture */
+.grid-paper {
+  background-color: var(--color-paper);
+  background-image:
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Dark chalkboard band, reserved for the hero/header only */
+.chalkboard {
+  background: radial-gradient(circle at 20% 20%, var(--color-chalkboard-light), var(--color-chalkboard) 70%);
+  color: #eef3ee;
+}
+
+/* The signature element: a red notebook margin rule down the left edge */
+.margin-rule {
+  border-left: 3px solid var(--color-margin);
+  padding-left: 1.25rem;
+}
+
+.font-display {
+  font-family: var(--font-display), monospace;
+}
+
+.font-accent {
+  font-family: var(--font-accent), cursive;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-beaker);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
