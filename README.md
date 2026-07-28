@@ -1,4 +1,4 @@
-# Pragati — Class 10 Science & Math RAG Chatbot
+# SSC-Tutor — Class 10 Science & Math RAG Chatbot
 
 A full-stack Next.js app where students sign up, ask Class 10 NCERT Science
 and Math questions by typing, uploading an image or text file, or speaking,
