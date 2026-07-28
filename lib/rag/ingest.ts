@@ -57,7 +57,8 @@ async function extractPdfText(buffer: Buffer): Promise<string> {
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         await page.render({
-          canvasContext: context,
+          canvas: null,
+          canvasContext: context as unknown as CanvasRenderingContext2D,
           viewport,
         }).promise;
 
